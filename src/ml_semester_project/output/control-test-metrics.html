@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-00126936caef982a19c7ed7f15220d63"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "metric", "legend": null, "title": "Metric", "type": "nominal"}, "tooltip": [{"field": "metric", "title": "Metric", "type": "nominal"}, {"field": "score", "format": ".3f", "title": "Mean score", "type": "quantitative"}], "x": {"field": "metric", "title": "Metric", "type": "nominal"}, "y": {"field": "score", "scale": {"domain": [0, 1]}, "title": "Score", "type": "quantitative"}}, "height": 400, "title": "Test metrics for control", "width": 650, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-00126936caef982a19c7ed7f15220d63": [{"model_name": "control", "metric": "Accuracy", "score": 0.5}, {"model_name": "control", "metric": "Macro precision", "score": 0.25}, {"model_name": "control", "metric": "Macro recall", "score": 0.5}, {"model_name": "control", "metric": "Macro F1", "score": 0.3333333333333333}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

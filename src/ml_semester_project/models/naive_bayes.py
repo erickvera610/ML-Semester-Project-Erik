@@ -1,8 +1,10 @@
-import pandas as pd
-import polars as pl
-import sklearn as sk
 import numpy as np
+import pandas as pd
 
 
-def naive_bayes(data):
-    pass
+def run_model(
+    training_data: pd.DataFrame,
+    evaluation_data: pd.DataFrame,
+    seed: int,
+) -> np.ndarray:
+    raise NotImplementedError("The Naive Bayes model is not implemented yet")

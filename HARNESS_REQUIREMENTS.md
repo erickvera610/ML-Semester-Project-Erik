@@ -6,7 +6,7 @@ This document tracks what the harness needs to run and evaluate the required mod
 
 ### Models
 
-- [ ] **Simple baseline:** implement and report a baseline such as majority class.
+- [x] **Simple baseline:** the majority-class baseline ran; its results are saved in `src/ml_semester_project/output/validation-results.csv` and `test-results.csv`.
 - [ ] **Classical model:** implement logistic regression.
 - [ ] **Neural model:** implement an MLP with 1–3 hidden layers.
 - [ ] **Track model:** implement Naive Bayes.
@@ -16,7 +16,7 @@ This document tracks what the harness needs to run and evaluate the required mod
 ### Data and experiment conditions
 
 - [ ] Load labeled review text and labels and check for missing/invalid values, label meanings, and class balance.
-- [x] Establish fixed train, validation, and test partitions. Keep the test set untouched until final evaluation. The provided test file is kept separate, and a reproducible, stratified 90/10 train/validation split is created from the training file.
+- [x] Establish fixed train, validation, and test partitions. Keep the test set untouched until final evaluation. The training file gets a reproducible, stratified 90/10 split; the separate test file is read only after validation runs.
 - [ ] Define a primary metric before evaluating models. Record any additional useful metrics, such as precision, recall, F1, and a confusion matrix.
 - [ ] Compare models at multiple training-set sizes. Subsets should be reproducible and preserve class proportions; do not rely on taking the first *n* rows.
 - [ ] Run one controlled vocabulary-related stress test, such as removing rare words or applying word dropout. State whether it changes training data, test data, or both, and use the same condition and severity for every model.
@@ -27,12 +27,13 @@ This document tracks what the harness needs to run and evaluate the required mod
 
 ### Shared harness behavior
 
-- [ ] Use a consistent model interface so the harness can fit each model on training data and obtain predictions/scores for validation and test data.
-- [ ] Fit text preprocessing and vocabulary only on the relevant training partition, then reuse the fitted transform for validation/test to avoid leakage.
-- [ ] Support both unigram and unigram-plus-bigram feature configurations. Ensure the selected vocabulary/stress condition is applied consistently to all models.
-- [ ] Centralize split seeds, training-size fractions, stress-test settings, feature settings, and model parameters in recorded configuration.
-- [ ] Save structured results containing model, condition, training size, seed, selected settings, and metrics so the report can be reproduced.
-- [ ] Handle class labels and predictions consistently across models; keep both labels and original review text available for error analysis.
+- [x] Use a consistent model-runner interface: each model module receives training and evaluation data, trains its model, and returns predictions.
+- [ ] Each text model must fit preprocessing and vocabulary on its training partition, then apply the fitted transform to validation/test data to avoid leakage.
+- [ ] Support both unigram and unigram-plus-bigram feature configurations and a vocabulary stress condition. Each model implementation will own its text preprocessing.
+- [ ] Centralize split seeds, training-size fractions, stress-test settings, feature settings, and model parameters in recorded configuration. Split and experiment settings are in `ExperimentPlan`; model parameters still need the model implementations.
+- [x] Save structured validation and final test results containing model, training fraction, repeat seed, split settings, and metrics so runs can be reproduced.
+- [x] Generate Altair validation and test graphs for accuracy, macro precision, macro recall, macro F1, and confusion matrices. Save an all-model master report and a report for each model with completed runs.
+- [x] Save each completed run's model, split settings, review ID and text, true label, and predicted label for error analysis.
 - [ ] Provide a runnable entry point and README instructions, including environment/package versions and the commands needed to reproduce the experiments.
 
 ## Current repository state
@@ -40,29 +41,27 @@ This document tracks what the harness needs to run and evaluate the required mod
 ### Present
 
 - `src/ml_semester_project/data/train-00000-of-00001.parquet` and `test-00000-of-00001.parquet` are present. Both have 25,000 rows and columns `text` (string) and `label` (integer). The data appears to be a 25,000/25,000 review dataset; verify and record the dataset source and label mapping.
-- `src/ml_semester_project/models/logistic_regression.py` exists, but its function currently returns `False` and does not train a model.
-- `src/ml_semester_project/models/naive_bayes.py` exists, but its function is a placeholder (`pass`).
-- `src/ml_semester_project/models/mlp.py` exists, but its function is a placeholder (`pass`).
-- `src/ml_semester_project/__init__.py` has a `training_model` function that calls those three model functions, and a `model_testing` placeholder.
-- `main()` loads the parquet files and starts iterating over slices of the training data in 10% increments.
-- The project dependencies include scikit-learn, NumPy, and Polars.
+- `src/ml_semester_project/models/control.py` provides the majority-class baseline and owns its fit/predict calls.
+- The logistic regression, Naive Bayes, and MLP model runners define the shared dataset-in/predictions-out interface but still need their model implementations.
+- `src/ml_semester_project/experiment_runner.py` owns the experiment plan, stratified validation split, training subsets, model-runner calls, shared metrics, and result rows. Validation and test runs use the same sweep function. Each model module owns its preprocessing and fitting. The plan currently varies training size and repeat seed only.
+- `main()` runs validation first, then evaluates models trained on the full training file against the separate test file. It writes result CSVs, per-review predictions, an all-model performance report, and model-specific reports under `src/ml_semester_project/output/`.
+- Per-review validation and test predictions are also saved there as Parquet files, with review text and labels for error analysis.
+- The current pipeline completed end to end for the implemented majority baseline. Runs for the other three models are recorded as `not_implemented` until teammates complete them.
+- The project dependencies include pandas, PyArrow for Parquet support, Altair, scikit-learn, and NumPy.
 
 ### Missing or incomplete
 
-- [ ] No baseline model is implemented.
-- [ ] None of the three model functions currently implements training or prediction.
-- [ ] `model_testing()` is unimplemented; there is no shared evaluation logic or metrics output.
-- [ ] The current data-size loop makes nested 10%-to-100% prefixes from the randomized training partition, but does not train or evaluate models; the prefixes are not guaranteed to preserve class proportions at every size.
-- [ ] A reproducible validation split exists, but there is no tuning workflow yet.
-- [ ] No text vectorization/preprocessing pipeline, unigram/bigram ablation, or vocabulary stress condition exists yet.
-- [ ] No error analysis, repeated-run uncertainty reporting, or structured results logging exists.
+- [ ] The three team-owned models still need implementations.
+- [ ] Hyperparameter tuning is not implemented; the final test pass uses each model runner's configured defaults.
+- [ ] Full model comparisons across all required models remain to be run after the team-owned models are implemented.
+- [ ] The runner records each seed's metrics; mean and standard deviation aggregation and error analysis remain to be added.
 - [ ] The README contains only the project title and team label; it does not document setup or reproduction steps.
 - [ ] Record the dataset citation/source and label mapping, then confirm whether it satisfies the team's dataset coordination with Team 2.
 
 ## Suggested harness run sequence
 
 1. Load and validate the dataset; establish reproducible train/validation/test splits.
-2. Fit train-only text vectorizers for unigram and unigram-plus-bigram conditions.
+2. Have each model fit its text vectorizer on its training partition for the unigram and unigram-plus-bigram conditions.
 3. Tune each required model on validation data with a matched configuration budget.
 4. Evaluate the reference condition for the baseline, logistic regression, MLP, and Naive Bayes.
 5. Repeat evaluation for each training size and the selected vocabulary stress condition, changing one factor per run.

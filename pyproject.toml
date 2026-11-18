@@ -8,10 +8,10 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "altair>=6.3.0",
     "numpy>=2.5.4",
     "pandas>=3.1.1",
-    "polar>=0.0.127",
-    "polars>=2.1.0",
+    "pyarrow>=20.0.0",
     "scikit-learn>=1.9.1",
 ]
 

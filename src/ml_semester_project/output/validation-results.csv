@@ -1,0 +1,121 @@
+model_name,train_fraction,seed,evaluation_set,split_seed,validation_fraction,status,training_rows,accuracy,precision_macro,recall_macro,f1_macro,confusion_matrix,reason
+control,0.1,420,validation,420,0.1,completed,2250.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.1,421,validation,420,0.1,completed,2250.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.1,422,validation,420,0.1,completed,2250.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.2,420,validation,420,0.1,completed,4500.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.2,421,validation,420,0.1,completed,4500.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.2,422,validation,420,0.1,completed,4500.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.3,420,validation,420,0.1,completed,6750.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.3,421,validation,420,0.1,completed,6750.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.3,422,validation,420,0.1,completed,6750.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.4,420,validation,420,0.1,completed,9000.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.4,421,validation,420,0.1,completed,9000.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.4,422,validation,420,0.1,completed,9000.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.5,420,validation,420,0.1,completed,11250.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.5,421,validation,420,0.1,completed,11250.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.5,422,validation,420,0.1,completed,11250.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.6,420,validation,420,0.1,completed,13500.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.6,421,validation,420,0.1,completed,13500.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.6,422,validation,420,0.1,completed,13500.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.7,420,validation,420,0.1,completed,15749.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.7,421,validation,420,0.1,completed,15749.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.7,422,validation,420,0.1,completed,15749.0,0.5,0.25,0.5,0.3333333333333333,"[[0, 1250], [0, 1250]]",
+control,0.8,420,validation,420,0.1,completed,18000.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.8,421,validation,420,0.1,completed,18000.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.8,422,validation,420,0.1,completed,18000.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.9,420,validation,420,0.1,completed,20250.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.9,421,validation,420,0.1,completed,20250.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,0.9,422,validation,420,0.1,completed,20250.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,1.0,420,validation,420,0.1,completed,22500.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,1.0,421,validation,420,0.1,completed,22500.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+control,1.0,422,validation,420,0.1,completed,22500.0,0.5,0.25,0.5,0.3333333333333333,"[[1250, 0], [1250, 0]]",
+logistic_regression,0.1,420,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.1,421,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.1,422,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.2,420,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.2,421,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.2,422,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.3,420,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.3,421,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.3,422,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.4,420,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.4,421,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.4,422,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.5,420,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.5,421,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.5,422,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.6,420,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.6,421,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.6,422,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.7,420,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.7,421,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.7,422,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.8,420,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.8,421,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.8,422,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.9,420,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.9,421,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,0.9,422,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,1.0,420,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,1.0,421,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,1.0,422,validation,420,0.1,not_implemented,,,,,,,The logistic regression model is not implemented yet
+mlp,0.1,420,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.1,421,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.1,422,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.2,420,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.2,421,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.2,422,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.3,420,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.3,421,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.3,422,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.4,420,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.4,421,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.4,422,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.5,420,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.5,421,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.5,422,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.6,420,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.6,421,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.6,422,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.7,420,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.7,421,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.7,422,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.8,420,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.8,421,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.8,422,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.9,420,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.9,421,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,0.9,422,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,1.0,420,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,1.0,421,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,1.0,422,validation,420,0.1,not_implemented,,,,,,,The MLP model is not implemented yet
+naive_bayes,0.1,420,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.1,421,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.1,422,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.2,420,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.2,421,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.2,422,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.3,420,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.3,421,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.3,422,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.4,420,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.4,421,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.4,422,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.5,420,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.5,421,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.5,422,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.6,420,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.6,421,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.6,422,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.7,420,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.7,421,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.7,422,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.8,420,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.8,421,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.8,422,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.9,420,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.9,421,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,0.9,422,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,1.0,420,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,1.0,421,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,1.0,422,validation,420,0.1,not_implemented,,,,,,,The Naive Bayes model is not implemented yet

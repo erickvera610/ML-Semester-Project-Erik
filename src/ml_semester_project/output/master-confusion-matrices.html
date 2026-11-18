@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-09c4a04840bfe835c5e0fa5556d8bda9"}, "facet": {"column": {"field": "model_name", "title": null, "type": "nominal"}, "row": {"field": "evaluation_set", "title": null, "type": "nominal"}}, "spec": {"layer": [{"mark": {"type": "rect"}, "encoding": {"color": {"field": "mean_count", "title": "Mean count", "type": "quantitative"}, "tooltip": [{"field": "evaluation_set", "title": "Evaluation set", "type": "nominal"}, {"field": "model_name", "title": "Model", "type": "nominal"}, {"field": "true_label", "title": "True label", "type": "ordinal"}, {"field": "predicted_label", "title": "Predicted label", "type": "ordinal"}, {"field": "mean_count", "format": ".1f", "title": "Mean count", "type": "quantitative"}], "x": {"field": "predicted_label", "title": "Predicted label", "type": "ordinal"}, "y": {"field": "true_label", "title": "True label", "type": "ordinal"}}}, {"mark": {"type": "text", "fontSize": 16}, "encoding": {"text": {"field": "mean_count", "format": ".0f", "type": "quantitative"}, "x": {"field": "predicted_label", "type": "ordinal"}, "y": {"field": "true_label", "type": "ordinal"}}}], "height": 180, "title": "Confusion matrices averaged over repeat seeds", "width": 220}, "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-09c4a04840bfe835c5e0fa5556d8bda9": [{"evaluation_set": "validation", "model_name": "control", "true_label": 0, "predicted_label": 0, "mean_count": 1250.0}, {"evaluation_set": "validation", "model_name": "control", "true_label": 0, "predicted_label": 1, "mean_count": 0.0}, {"evaluation_set": "validation", "model_name": "control", "true_label": 1, "predicted_label": 0, "mean_count": 1250.0}, {"evaluation_set": "validation", "model_name": "control", "true_label": 1, "predicted_label": 1, "mean_count": 0.0}, {"evaluation_set": "test", "model_name": "control", "true_label": 0, "predicted_label": 0, "mean_count": 12500.0}, {"evaluation_set": "test", "model_name": "control", "true_label": 0, "predicted_label": 1, "mean_count": 0.0}, {"evaluation_set": "test", "model_name": "control", "true_label": 1, "predicted_label": 0, "mean_count": 12500.0}, {"evaluation_set": "test", "model_name": "control", "true_label": 1, "predicted_label": 1, "mean_count": 0.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

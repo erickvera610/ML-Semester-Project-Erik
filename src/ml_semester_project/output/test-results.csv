@@ -1,0 +1,13 @@
+model_name,train_fraction,seed,evaluation_set,split_seed,status,training_rows,accuracy,precision_macro,recall_macro,f1_macro,confusion_matrix,reason
+control,1.0,420,test,,completed,25000.0,0.5,0.25,0.5,0.3333333333333333,"[[12500, 0], [12500, 0]]",
+control,1.0,421,test,,completed,25000.0,0.5,0.25,0.5,0.3333333333333333,"[[12500, 0], [12500, 0]]",
+control,1.0,422,test,,completed,25000.0,0.5,0.25,0.5,0.3333333333333333,"[[12500, 0], [12500, 0]]",
+logistic_regression,1.0,420,test,,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,1.0,421,test,,not_implemented,,,,,,,The logistic regression model is not implemented yet
+logistic_regression,1.0,422,test,,not_implemented,,,,,,,The logistic regression model is not implemented yet
+mlp,1.0,420,test,,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,1.0,421,test,,not_implemented,,,,,,,The MLP model is not implemented yet
+mlp,1.0,422,test,,not_implemented,,,,,,,The MLP model is not implemented yet
+naive_bayes,1.0,420,test,,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,1.0,421,test,,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
+naive_bayes,1.0,422,test,,not_implemented,,,,,,,The Naive Bayes model is not implemented yet
