@@ -59,7 +59,9 @@ class SharedFeaturesTest(unittest.TestCase):
 
     def test_bigram_arm_contains_every_unigram_feature(self):
         training = make_reviews(200)
-        unigrams = set(build_vectorizer(REFERENCE_FEATURES).fit(training["text"]).vocabulary_)
+        unigrams = set(
+            build_vectorizer(REFERENCE_FEATURES).fit(training["text"]).vocabulary_
+        )
         both = set(
             build_vectorizer(UNIGRAM_BIGRAM_FEATURES).fit(training["text"]).vocabulary_
         )

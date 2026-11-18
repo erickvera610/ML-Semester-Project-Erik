@@ -104,7 +104,9 @@ class TuningBudgetTest(unittest.TestCase):
     def test_each_configuration_changes_at_most_one_hyperparameter(self):
         self.assertEqual(TUNING_CONFIGURATIONS[0], BASE_PARAMS)
         for config in TUNING_CONFIGURATIONS[1:]:
-            changed = [name for name in BASE_PARAMS if config[name] != BASE_PARAMS[name]]
+            changed = [
+                name for name in BASE_PARAMS if config[name] != BASE_PARAMS[name]
+            ]
             self.assertEqual(len(changed), 1)
 
     def test_selected_configuration_is_inside_the_budget(self):
