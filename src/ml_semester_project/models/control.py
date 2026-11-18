@@ -8,7 +8,7 @@ def run_model(
     evaluation_data: pd.DataFrame,
     seed: int,
 ) -> np.ndarray:
-    del seed  # The majority-class baseline has no random component.
+    del seed 
 
     model = DummyClassifier(strategy="most_frequent")
     training_reviews = training_data["text"].tolist()
