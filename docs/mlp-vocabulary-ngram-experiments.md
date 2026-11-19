@@ -508,6 +508,11 @@ Run:
 - The main entry point (`ml_semester_project.main`) with the MLP, in a copy of
   the repository: it finished in about 3 minutes and produced the MLP charts.
 - A fresh `pip` environment built from `requirements.txt`: the unit tests pass.
+- A clean reproduction: a fresh clone of this branch (commit `ae08f11`) with a
+  fresh `uv sync` environment re-ran every command in the README. Every result
+  table and prediction file came out with identical values; only the wall-clock
+  columns differ. The whole sequence took 21 minutes on 2 cores, and the main
+  entry point gave the same MLP numbers as the separate MLP run.
 - The PNG version of every figure was inspected.
 - The data files were compared with the Hugging Face repository by SHA-256.
 
